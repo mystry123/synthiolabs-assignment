@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { Edit3, SquarePen } from "lucide-react";
+import { SquarePen } from "lucide-react";
 import type { ChatUser } from "./types";
 
 interface ChatSidebarProps {
