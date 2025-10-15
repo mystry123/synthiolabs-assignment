@@ -78,6 +78,17 @@ npm run dev
 - **Consistent Spacing**: TailwindCSS utility classes for consistent design
 - **Accessibility**: Proper ARIA labels and keyboard navigation support
 
+## 📊 Performance
+
+The application has been optimized for performance and accessibility, achieving excellent Lighthouse scores:
+
+![Lighthouse Results](./public/assets/Screenshot%202025-10-16%20at%205.02.04%20AM.png)
+
+- **Performance**: 96/100
+- **Accessibility**: 85/100
+- **Best Practices**: 96/100
+- **SEO**: 91/100
+
 ## 🔧 Available Scripts
 
 - `pnpm dev` - Start development server
