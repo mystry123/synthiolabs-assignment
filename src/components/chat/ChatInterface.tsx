@@ -229,7 +229,7 @@ export const ChatInterface: React.FC = () => {
   }, [selectedUserId]);
 
   return (
-    <div className="flex h-[calc(100vh-56px)] bg-transparent overflow-hidden">
+    <div className="flex h-[calc(100vh-3.5rem)] bg-transparent overflow-hidden">
       {/* Mobile: Hide sidebar when chat is selected, Desktop: Always show */}
       <div className={`${selectedUserId ? 'hidden md:flex' : 'flex'} md:flex w-[full]  md:w-[35%] lg:w-[25%]`}>
         <ChatSidebar

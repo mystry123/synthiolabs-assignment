@@ -44,9 +44,9 @@ UserListItem.displayName = "UserListItem";
 export const ChatSidebar: React.FC<ChatSidebarProps> = memo(
   ({ users, selectedUserId, onUserSelect }) => {
     return (
-      <div className="w-full bg-transparent flex flex-col  pb-10">
+      <div className="w-full bg-transparent flex flex-col pb-10">
         {/* Header */}
-        <div className="p-4 mb-2 flex-shrink-0">
+        <div className="p-4 my-1 flex-shrink-0">
           <div className="flex items-center justify-between">
             <h2 className="text-xl md:text-2xl font-semibold text-gray-900">
               Chats
