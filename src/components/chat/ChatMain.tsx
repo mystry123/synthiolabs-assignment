@@ -12,6 +12,8 @@ import {
   Phone,
   ArrowLeft,
 } from "lucide-react";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 import type { ChatUser, ChatMessage } from "./types";
 
 interface ChatMainProps {
@@ -135,13 +137,15 @@ export const ChatMain: React.FC<ChatMainProps> = memo(
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2 md:space-x-3 min-w-0">
               {/* Back button - only visible on mobile */}
-              <button
+              <Button
                 onClick={onBackToSidebar}
+                variant="attachment"
+                size="icon"
                 className="md:hidden p-1.5 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors duration-150 flex-shrink-0"
                 aria-label="Back to chat list"
               >
                 <ArrowLeft size={20} />
-              </button>
+              </Button>
               <div className="relative flex-shrink-0">
                 <img
                   src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=40&h=40&fit=crop&crop=face"
@@ -159,18 +163,26 @@ export const ChatMain: React.FC<ChatMainProps> = memo(
               </div>
             </div>
             <div className="flex items-center space-x-2 md:space-x-3 flex-shrink-0">
-              <button className="p-1.5 md:p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full border">
+              <Button
+                variant="attachment"
+                size="icon"
+                className="p-1.5 md:p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full border"
+              >
                 <MessageSquare size={16} className="text-black" />
-              </button>
-              <button className="p-1.5 md:p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full border">
+              </Button>
+              <Button
+                variant="attachment"
+                size="icon"
+                className="p-1.5 md:p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full border"
+              >
                 <Phone size={16} className="text-black" />
-              </button>
+              </Button>
             </div>
           </div>
         </div>
 
         {/* Messages */}
-        <div className="flex flex-col overflow-y-auto px-3 md:px-6 pb-32 md:pb-40 pt-4 md:pt-8 space-y-1 min-h-0 mx-2 md:mx-8 scrollbar-hide">
+        <div className="flex flex-col overflow-y-auto px-3 md:px-6 pb-32 md:pb-48 pt-4 md:pt-8 space-y-1 min-h-0 mx-2 md:mx-8 scrollbar-hide">
           {messages.map((message) => (
             <MessageBubble
               key={message.id}
@@ -188,18 +200,19 @@ export const ChatMain: React.FC<ChatMainProps> = memo(
         <div className="absolute bottom-12 md:bottom-16 left-0 right-0 p-3 md:p-4 bg-white flex-shrink-0 rounded-xl mx-2 md:mx-6 border border-[#EEEEEE] shadow-lg">
           <form onSubmit={handleSubmit} className="flex items-center space-x-3">
             <div className="flex w-full flex-col space-y-2">
-              <input
+              <Input
                 type="text"
                 value={newMessage}
                 onChange={(e) => onNewMessageChange(e.target.value)}
                 onKeyPress={handleKeyPress}
+                className="p-0 rounded-none"
                 placeholder="What roles do regulatory affairs specialists play in drug approval?"
-                className="w-full pr-6 border-none resize-none focus:outline-none focus:border-none focus:ring-0 bg-transparent"
               />
               <div className="flex w-full items-center justify-between">
-                <button
+                <Button
+                  variant="attachment"
                   type="button"
-                  className="text-gray-300 hover:text-gray-600 hover:bg-gray-100 rounded-full border p-2"
+                  size="icon"
                   onClick={() => {
                     // Handle file attachment
                     const input = document.createElement("input");
@@ -216,14 +229,15 @@ export const ChatMain: React.FC<ChatMainProps> = memo(
                   }}
                 >
                   <Paperclip size={16} className="text-black" />
-                </button>
-                <button
+                </Button>
+                <Button
+                  variant="send"
                   type="submit"
+                  size="icon"
                   disabled={!newMessage.trim()}
-                  className="p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed button-background-gradient"
                 >
                   <ArrowUp size={16} />
-                </button>
+                </Button>
               </div>
             </div>
           </form>

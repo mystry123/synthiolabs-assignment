@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import { SquarePen } from "lucide-react";
 import type { ChatUser } from "./types";
+import { Button } from "../ui/button";
 
 interface ChatSidebarProps {
   users: ChatUser[];
@@ -51,9 +52,13 @@ export const ChatSidebar: React.FC<ChatSidebarProps> = memo(
             <h2 className="text-xl md:text-2xl font-semibold text-gray-900">
               Chats
             </h2>
-            <button className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full">
+            <Button
+              variant="attachment"
+              size="icon"
+              className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full"
+            >
               <SquarePen size={24} strokeWidth={1} className="text-black" />
-            </button>
+            </Button>
           </div>
         </div>
 
