@@ -93,3 +93,33 @@ The application uses TailwindCSS for styling. You can customize the design by:
 1. Modifying the `tailwind.config.ts` file
 2. Updating CSS custom properties in `src/index.css`
 3. Editing component-specific styles in individual components
+
+## 🔧 Design Assumptions & Trade-offs
+
+### **Background Gradients**
+- **Assumption**: Used SVG gradient image (`/assets/gradient.svg`) instead of CSS gradients
+- **Reason**: No specific color specifications were provided in the design requirements
+- **Trade-off**: SVG approach provides more design flexibility but requires additional asset management
+- **Alternative**: Could use CSS `radial-gradient()` with custom colors if specifications are provided
+
+### **Icon System**
+- **Choice**: Lucide React icons throughout the application
+- **Reason**: Consistent, lightweight, and tree-shakeable icon library
+- **Trade-off**: Avoided custom SVG icons to maintain consistency and reduce bundle size
+- **Benefits**: Better performance, accessibility, and easier maintenance
+
+### **Navigation Tab Background**
+- **Implementation**: Used `bg-[#F6F6F6]/70` instead of `bg-[#FFFFFF]/80`
+- **Reason**: Better visibility and contrast against the gradient background
+- **Issue**: White background (`#FFFFFF/80`) was not visible enough against the light gradient
+- **Solution**: Switched to light gray with 70% opacity for better visual hierarchy
+
+### **Responsive Design**
+- **Approach**: Mobile-first design with progressive enhancement
+- **Assumption**: Primary usage on both mobile and desktop devices
+- **Trade-off**: Slightly more complex CSS but better user experience across devices
+
+### **Mock Data**
+- **Implementation**: Hardcoded medical professional data for demonstration
+- **Assumption**: Real API integration will replace mock data in production
+- **Trade-off**: Faster development but requires future refactoring for real data sources
