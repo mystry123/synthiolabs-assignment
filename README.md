@@ -1,73 +1,95 @@
-# React + TypeScript + Vite
+# SynthioLabs Chat Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive chat interface application built for SynthioLabs, featuring multi-tab navigation and real-time messaging capabilities for medical professionals.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Multi-Tab Navigation**: Dashboard, Insights, Transcript, and Chat sections
+- **Responsive Design**: Mobile-first approach with adaptive layouts
+- **Professional Chat Interface**: Designed for medical professionals and clinical researchers
+- **Auto-scroll Messaging**: Automatic scroll to latest messages
+- **Modern UI**: Clean design with gradient backgrounds and smooth animations
+- **TypeScript Support**: Full type safety throughout the application
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend Framework**: React 19.1.1 with TypeScript
+- **Build Tool**: Vite for fast development and optimized builds
+- **Styling**: TailwindCSS with custom gradients and animations
+- **UI Components**:
+  - Radix UI primitives (dropdowns, tabs)
+  - shadcn/ui component library
+  - Lucide React icons
+- **State Management**: Zustand for lightweight state management
+- **Development**: ESLint for code quality and consistency
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (v18 or higher)
+- pnpm (recommended) or npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd SynthioLabs-assignment
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
+# or
+npm install
 ```
+
+3. Start the development server:
+
+```bash
+pnpm run dev
+# or
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 📱 Features Overview
+
+### Chat Interface
+
+- **User List**: Sidebar showing medical professionals with their roles and online status
+- **Message History**: Real-time chat messages with timestamps
+- **Responsive Layout**: Seamless mobile and desktop experience
+- **Auto-selection**: Automatically selects first user on large screens
+
+### Navigation
+
+- **Multi-tab Interface**: Easy switching between different application sections
+- **Mobile Menu**: Collapsible navigation for mobile devices
+- **Active State**: Visual indicators for current section
+
+### Design System
+
+- **Custom Gradients**: Beautiful background gradients using SVG assets
+- **Consistent Spacing**: TailwindCSS utility classes for consistent design
+- **Accessibility**: Proper ARIA labels and keyboard navigation support
+
+## 🔧 Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview production build
+- `pnpm lint` - Run ESLint
+- `pnpm typecheck` - Run TypeScript type checking
+
+## 🎨 Customization
+
+The application uses TailwindCSS for styling. You can customize the design by:
+
+1. Modifying the `tailwind.config.ts` file
+2. Updating CSS custom properties in `src/index.css`
+3. Editing component-specific styles in individual components
